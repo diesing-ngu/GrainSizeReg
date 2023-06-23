@@ -56,7 +56,7 @@ res <- 4000
 Define the area of interest either by bounding coordinates or by loading a shapefile.
 
 ```{r aoi}
-AoI <- read_sf(dsn = "input", layer = "AoI_Harris")
+AoI <- read_sf(dsn = "input", layer = "AoI_Harris_mod")
 ```
 
 
@@ -423,7 +423,7 @@ dist_geogr2 <- plot_geodist(resp, predictors,
                      unit="km",
                      showPlot = FALSE)
 
-dist_geogr2$plot
+dist_geogr2$plot + ylim(0,0.03)
 dist_geogr2$plot + scale_x_log10() + ylim(0,2)
 ```
 
