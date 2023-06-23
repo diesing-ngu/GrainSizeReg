@@ -604,7 +604,7 @@ The results are exported as GeoTiffs for further analysis.
 
 ```{r export_rasters}
 writeRaster(rfres, paste0("output/GrainSizeReg_folk8_classes_", Sys.Date(), ".tif"))
-writeRaster(rfprob, paste0("output/GrainSizeReg_folk8_probabilities_", Sys.Date(), ".tif"), names = model$levels)
+writeRaster(rast(rfprob), paste0("output/GrainSizeReg_folk8_probabilities_", Sys.Date(), ".tif"), names = model$levels)
 writeRaster(max_prob, paste0("output/GrainSizeReg_folk8_max_probabilities_", Sys.Date(), ".tif"))
 writeRaster(resp_aoa$DI, paste0("output/GrainSizeReg_folk8_DI_", Sys.Date(), ".tif"))
 writeRaster(resp_aoa$AOA, paste0("output/GrainSizeReg_folk8_AOA_", Sys.Date(), ".tif"))
