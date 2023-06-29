@@ -95,7 +95,7 @@ plot(predictors)
 
 ## Minimum extent
 
-Create an unprojected spatial polygon giving the minimum extent of all predictors. This will be used to limit the response data to those points for which predictor variable data can be extracted.
+Create a spatial polygon giving the minimum extent of all predictors. This will be used to limit the response data to those points for which predictor variable data can be extracted.
 
 ```{r min_extent}
 min_ext <- sum(predictors)
@@ -118,7 +118,7 @@ resp_type <- "GrainSize"
 ## Load response
 
 ```{r load_response}
-resp <- read_sf(dsn = "input", layer = "GrainSizeReg_4km_MaxCombArea_folk8_point_20230615")
+resp <- read_sf(dsn = "input", layer = "GrainSize_4km_MaxCombArea_folk8_point_20230628")
 names(resp)[2] <- resp_type
 resp$GrainSize <- as.factor(resp$GrainSize)
 summary(resp)
