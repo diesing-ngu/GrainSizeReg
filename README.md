@@ -1,6 +1,6 @@
 ## Predicted substrate types on the Norwegian continental margin
 
-Spatial prediction of the seafloor substrate types on the Norwegian continental margin based on regional manual maps developed by the Geological Survey of Norway as part of the seafloor mapping programme MAREANO (https://mareano.no/en). The following eight substrate classes were mapped:
+Spatial prediction of the seafloor substrate types on the Norwegian continental margin based on regional manual maps developed by the Geological Survey of Norway as part of the seafloor mapping programme MAREANO (https://mareano.no/en). The original classification contained twenty-six classes of substrate types. These were simplified to the following eight classes (original classes in brackets):
 
 **Mud** (includes clay; silt; mud; mud with sediment blocks; gravelly mud)
 
