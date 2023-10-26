@@ -11,7 +11,6 @@ Grain-size classes (kornstørrelse) are spatially predicted based on observation
 
 # Preparations
 
-
 ## Install packages
 
 ```{r packages}
@@ -39,11 +38,17 @@ library(dplyr)
 ```
 
 
+## Download and unzip input data
+
+```{r input_data}
+download.file(url = "https://zenodo.org/records/10040165/files/SubstrateType_input.zip", destfile = "input/input_data.zip")
+unzip(zipfile = "input/input_data.zip", exdir = "input")
+```
+
+
 ## Define projection and resolution
 
 Projection based on https://projectionwizard.org/ using the AoI.
-
-*Is it possible to automate the selection of the CSR based on the AoI?*
 
 ```{r projection}
 crs <- "+proj=laea +lat_0=90 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs" 
@@ -179,8 +184,6 @@ plot(B, las=2, colCode = c("greenyellow", "yellow2", "red3", "cadetblue"), xlab 
 ## De-correlation analysis
 
 To reduce redundancy in information, a de-correlation analysis is carried out. Of those predictor variables identified as important in the Boruta analysis, only those with a correlation coefficient below a set threshold are retained. However, a universally applicable threshold does not exist. Additionally, multicollinearity, i.e., collinearity between three or more variables, might exist in the data. Variance inflation factors (VIFs) are therefore additionally calculated to check for multicollinearity. As a rule of thumb, VIFs larger than 5 or 10 indicate a problematic amount of collinearity (James et al., 2017: pp. 101-102; doi: 10.1080/24754269.2021.1980261). According to Johnston et al. (2017; doi: 10.1007/s11135-017-0584-6) a VIF of 2.5 or greater is generally considered indicative of considerable collinearity.
-
-*NB! This step is iterative. Change the threshold value (th) until VIF is below 2.5.*
 
 ```{r de-corr, message=FALSE, warning=FALSE}
 th <- 1
@@ -382,7 +385,7 @@ Spatial blocks and folds are created. The folds will be used in a spatial k-fold
 
 Roberts et. al. (2017) suggest that blocks should be substantially bigger than the range of spatial autocorrelation (in model residual) to obtain realistic error estimates, while a buffer with the size of the spatial autocorrelation range would result in a good estimation of error.
 
-*Should we increase the block size? This could be gauged by looking at the geographic distances plot below. The block size might be right, when sample-to-prediction and CV distances look similar.*
+*Should we modify the block size? This could be gauged by looking at the geographic distances plot below. The block size might be right, when sample-to-prediction and CV distances look similar.*
 
 ```{r spatial_blocks}
 k <- 10 # Number of folds
