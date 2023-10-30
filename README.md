@@ -17,3 +17,16 @@ Spatial prediction of the seafloor substrate types on the Norwegian continental 
 **Rock and boulders** (includes gravel, cobbles and boulders; compacted sediments or sedimentary bedrock;       thin or discontinuous sediment cover on bedrock)
 
 **Mosaic seafloor** (includes mud/sand with cobbles/boulders; mud and sand with gravel, cobbles and             boulders)
+
+
+### Model outputs ###
+
+The following outputs are provided:
+
+* Predicted substrate classes as defined above
+
+* Prediction probabilities of the eight substrate classes
+
+* Maximum probabilities, i.e., the probability of the classes that was mapped. Can be used as an indicator of map confidence.
+
+* Area of applicability of the model [(Meyer & Pebesma, 2021)](https://doi.org/10.1111/2041-210X.13650)
